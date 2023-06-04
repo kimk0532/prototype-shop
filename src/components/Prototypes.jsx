@@ -2,9 +2,8 @@ import usePrototypes from '../hooks/usePrototypes';
 import useActions from '../hooks/useActions';
 
 export default function Prototypes() {
-
-    const prototypes = usePrototypes();
-    const {addToOrder} = useActions();
+  const prototypes = usePrototypes();
+  const { addToOrder } = useActions();
 
   return (
     <main>
@@ -13,13 +12,13 @@ export default function Prototypes() {
           const { id, thumbnail, title, price, desc, pieUrl } = prototype;
           const click = () => {
             addToOrder(id);
-          }
+          };
           return (
             <div className="prototype" key={id}>
               <a href={pieUrl} target="_BLANK" rel="noreferrer">
                 <div
                   style={{
-                    padding: "25px 0 33px 0",
+                    padding: '25px 0 33px 0',
                   }}
                 >
                   <video
@@ -28,7 +27,7 @@ export default function Prototypes() {
                     playsInline
                     className="prototype__artwork prototype__edit"
                     style={{
-                      objectFit: "contain",
+                      objectFit: 'contain',
                     }}
                     src={thumbnail}
                   />
@@ -37,7 +36,10 @@ export default function Prototypes() {
 
               <div className="prototype__body">
                 <div className="prototype__title">
-                  <div className="btn btn--primary float--right" onClick={click}>
+                  <div
+                    className="btn btn--primary float--right"
+                    onClick={click}
+                  >
                     <i className="icon icon--plus" />
                   </div>
 
